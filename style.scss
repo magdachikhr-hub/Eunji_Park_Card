@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap");
+
+$main_background_color: #363636;
+$card_background_color: #ffffff;
+$font_family: "Source Serif 4", serif;
+$header_font_family: "Radio Canada Big", sans-serif;
+$font_color_gray: #6c6c6c;
+$black: #000000;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font_family;
+}
+
+main {
+  min-height: 100vh;
+  background-color: $main_background_color;
+  @include flex-center;
+  justify-content: center;
+  div.container {
+    width: 335px;
+    height: 664px;
+    background-color: $card_background_color;
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 335px;
+      height: 378px;
+    }
+    span {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: -3%;
+      color: $font_color_gray;
+      display: inline-block;
+      margin-top: 16px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: -3%;
+      color: $black;
+      margin: 8px 0 20px;
+      font-family: $header_font_family;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: -3%;
+      color: $black;
+      line-height: 120%;
+    }
+    @media screen and (min-width: 760px) {
+      width: 760px;
+      height: 426px;
+      flex-direction: row;
+      align-items: center;
+      gap: 56px;
+
+      img {
+        width: 372px;
+        height: 426px;
+      }
+      span {
+        margin-top: 0;
+      }
+      h1 {
+        margin: 7px 0 56px;
+      }
+      p {
+        width: 292px;
+        height: 220px;
+      }
+    }
+  }
+}
